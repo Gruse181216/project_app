@@ -3,7 +3,7 @@ import 'package:project_app/screens/login_system/login_screen.dart';
 import 'package:project_app/screens/screen/profile/widget/profile_menu.dart';
 import 'package:project_app/screens/screen/profile/report_screen.dart';
 import 'package:project_app/screens/screen/settings/detail_setting.dart';
-import 'package:project_app/screens/screen/wallet/payment_wallet.dart';
+import 'package:project_app/screens/screen/wallet/wallet_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -108,7 +108,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 title: 'Wallet',
                 icon: (Icons.account_balance_wallet_rounded),
                 onPress: () => Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => PaymentScreen()))),
+                    MaterialPageRoute(builder: ((context) => WalletScreen()))),
               ),
               ProfileMenuWidget(
                 title: 'Address',

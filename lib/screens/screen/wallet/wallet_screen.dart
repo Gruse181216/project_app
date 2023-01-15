@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/screens/screen/wallet/widget_wallet/list_wallet.dart';
+import 'package:project_app/screens/screen/wallet/widget_wallet/payment.dart';
 
-class PaymentScreen extends StatefulWidget {
-  const PaymentScreen({super.key});
+class WalletScreen extends StatefulWidget {
+  const WalletScreen({super.key});
 
   @override
-  State<PaymentScreen> createState() => _PaymentScreenState();
+  State<WalletScreen> createState() => _WalletScreenState();
 }
 
-class _PaymentScreenState extends State<PaymentScreen> {
+class _WalletScreenState extends State<WalletScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,13 +62,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       color: Colors.black,
                     ),
                   ),
-                  Text("สแกนจ่าย")
+                  Text("สแกนจ่าย"),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => PaymentWalletScreen()))),
                     icon: Icon(
                       Icons.add_card,
                       size: 35,
@@ -92,7 +95,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
               Column(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => ListWalletScreen()))),
                     icon: Icon(
                       Icons.access_time ,
                       size: 35,

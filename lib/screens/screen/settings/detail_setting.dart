@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/settings/about_setting/about_setting.dart';
+import 'package:project_app/screens/screen/settings/about_setting/about_setting.dart';
 
 class DetailSetting extends StatefulWidget {
   const DetailSetting({super.key});

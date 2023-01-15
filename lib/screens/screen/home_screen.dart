@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:project_app/data/data.dart';
 import 'package:project_app/models/restaurant.dart';
-import 'package:project_app/profile/profile_screen.dart';
-import 'package:project_app/screens/screens/cart_screen.dart';
-import 'package:project_app/screens/screens/restaurant_screen.dart';
+import 'package:project_app/screens/screen/profile/profile_screen.dart';
+import 'package:project_app/screens/screen/cart_screen.dart';
+import 'package:project_app/screens/screen/restaurant_screen.dart';
+import 'package:project_app/widget/category_screen.dart';
 import 'package:project_app/widget/poppular_shop.dart';
 import 'package:project_app/widget/recent_order.dart';
 
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Meao Food"),
+        title: const Text("Meaow Food"),
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
         leading: IconButton(
@@ -60,6 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {}, icon: const Icon(Icons.clear))),
             ),
           ),
+          SizedBox(height: 15),
+          const CategoryScreen(),
+          SizedBox(height: 20),
           const RecentOrders(),
           SizedBox(height: 10),
           const PoppularShop(),

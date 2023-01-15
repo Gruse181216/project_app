@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/profile/widget/profile_menu.dart';
-import 'package:project_app/report/report_screen.dart';
-import 'package:project_app/settings/detail_setting.dart';
+import 'package:project_app/screens/login_system/login_screen.dart';
+import 'package:project_app/screens/screen/profile/widget/profile_menu.dart';
+import 'package:project_app/screens/screen/profile/report_screen.dart';
+import 'package:project_app/screens/screen/settings/detail_setting.dart';
+import 'package:project_app/screens/screen/wallet/payment_wallet.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -46,10 +48,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: 35,
                       height: 35,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: Colors.blueAccent
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.blueAccent),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.edit,
+                          color: Colors.black,
+                          size: 20,
+                        ),
                       ),
-                      child: Icon(Icons.favorite,color: Colors.black,size: 20,),
                     ),
                   )
                 ],
@@ -73,13 +81,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 width: 170,
                 child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        side: BorderSide.none, shape: StadiumBorder()),
-                    child: Text(
-                      'Edit Profile',
-                      style: TextStyle(color: Colors.black),
-                    )),
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => LoginScreen()))),
+                  style: ElevatedButton.styleFrom(
+                      side: BorderSide.none, shape: StadiumBorder()),
+                  child: Text(
+                    'Edit Profile',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
               ),
               SizedBox(
                 height: 30,
@@ -96,12 +106,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               ProfileMenuWidget(
                 title: 'Wallet',
-                icon: (Icons.payment_outlined),
-                onPress: () {},
+                icon: (Icons.account_balance_wallet_rounded),
+                onPress: () => Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => PaymentScreen()))),
               ),
               ProfileMenuWidget(
-                title: 'User Management',
-                icon: (Icons.person),
+                title: 'Address',
+                icon: (Icons.add_location),
                 onPress: () {},
               ),
               Divider(

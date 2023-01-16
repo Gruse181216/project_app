@@ -34,7 +34,7 @@ final _salmon = Food(
 final _restaurant0 = Restaurant(
     imageUrl: "assets/restaurant0.jpg",
     name: "Haveli Restaurant",
-    address: "2170-A Food St Fort Rd",
+    address: "2170-A Food St Fort Rd ",
     rating: 5,
     menu: [
       _burrito,

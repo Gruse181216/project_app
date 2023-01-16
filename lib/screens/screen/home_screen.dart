@@ -31,12 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           TextButton(
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CartScreen())),
-              child: Text(
-                "Cart (${currentUser.cart.length})",
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-              ))
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => CartScreen())),
+            child: Text(
+              "Cart (${currentUser.cart.length})",
+              style: const TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
         ],
       ),
       body: ListView(

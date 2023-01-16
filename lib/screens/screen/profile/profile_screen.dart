@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/screens/login_system/login_screen.dart';
+import 'package:project_app/screens/screen/address/address_screen.dart';
 import 'package:project_app/screens/screen/profile/widget/profile_menu.dart';
 import 'package:project_app/screens/screen/profile/report_screen.dart';
 import 'package:project_app/screens/screen/settings/detail_setting.dart';
@@ -113,7 +114,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ProfileMenuWidget(
                 title: 'Address',
                 icon: (Icons.add_location),
-                onPress: () {},
+                onPress: () => Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => AddressScreen()))),
               ),
               Divider(
                 color: Colors.grey,

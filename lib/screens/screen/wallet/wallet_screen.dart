@@ -57,19 +57,21 @@ class _WalletScreenState extends State<WalletScreen> {
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.center_focus_weak ,
+                      Icons.payment,
                       size: 35,
                       color: Colors.black,
                     ),
                   ),
-                  Text("สแกนจ่าย"),
+                  Text("ถอน"),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => PaymentWalletScreen()))),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => PaymentWalletScreen()))),
                     icon: Icon(
                       Icons.add_card,
                       size: 35,
@@ -84,7 +86,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.autorenew ,
+                      Icons.autorenew,
                       size: 35,
                       color: Colors.black,
                     ),
@@ -95,10 +97,12 @@ class _WalletScreenState extends State<WalletScreen> {
               Column(
                 children: [
                   IconButton(
-                    onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => ListWalletScreen()))),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => ListWalletScreen()))),
                     icon: Icon(
-                      Icons.access_time ,
+                      Icons.access_time,
                       size: 35,
                       color: Colors.black,
                     ),
@@ -107,6 +111,27 @@ class _WalletScreenState extends State<WalletScreen> {
                 ],
               )
             ],
+          ),
+          SizedBox(height: 15),
+          Divider(),
+          SizedBox(height: 15),
+          Container(
+            width: 170,
+            height: 60,
+            color: Colors.white,
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.add_circle_outline,
+                  size: 35,
+                ),
+              ),
+              Text(
+                'เพิ่มบัญชี',
+                style: TextStyle(fontSize: 16),
+              )
+            ]),
           )
         ]),
       ),

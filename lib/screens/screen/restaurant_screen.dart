@@ -2,6 +2,7 @@ import 'package:project_app/models/food.dart';
 import 'package:project_app/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:project_app/screens/screen/review/review_screen.dart';
 
 class RestaurantScreen extends StatefulWidget {
   final Restaurant restaurant;
@@ -66,7 +67,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   Text(
                     "10 Km away",
                     style: TextStyle(fontSize: 16),
-                  )
+                  ),
                 ],
               ),
               SizedBox(height: 10),
@@ -84,44 +85,37 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     Text(rating.toString());
                   }),
               SizedBox(height: 10),
-              Text(
-                widget.restaurant.address,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Text(
+                      widget.restaurant.address,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    
+                  ),
+                  SizedBox(width: 96),
+                  MaterialButton(
+                    splashColor: Colors.grey,
+                    elevation: 4,
+                    hoverElevation: 10,
+                    color: Colors.blueAccent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => ReviewScreen()))),
+                    child: Text(
+                      "Reviews",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MaterialButton(
-                splashColor: Colors.grey,
-                elevation: 4,
-                hoverElevation: 10,
-                color: Colors.blueAccent,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                onPressed: () {},
-                child: Text(
-                  "Reviews",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-              MaterialButton(
-                splashColor: Colors.grey,
-                elevation: 4,
-                hoverElevation: 10,
-                color: Colors.greenAccent,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                onPressed: () {},
-                child: Text(
-                  "Contact",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              )
             ],
           ),
         ),
